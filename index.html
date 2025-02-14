@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ru" style="--tg-viewport-height: 100vh; --tg-viewport-stable-height: 100vh;">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta http-equiv="Cache-Control" content="no-store" />
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="robots" content="noindex, nofollow"/> 
+<base href="https://app.fmplayer.ru/">
+<title>Радио в Telegram</title>
+<!-- Telegram Mini App SDK -->
+<script src="js/telegram-web-app.js"></script>
+<!-- Стили -->
+<link rel="stylesheet" href="css/main.min.css" />
+<link rel="stylesheet" href="css/rg.css" />
+<script src="js/main.js" defer></script>
+<script src="js/c.js" defer></script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(99167442, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+     let tg = window.Telegram.WebApp; //получаем объект webapp телеграма 
+
+   window.streams = {
+    timeRefresh: 10000,
+    stations: [
+ {
+    name: "",
+    hash: "",
+    description: "",
+    logo: "",
+    album: "img/goose/radiogoose.webp",
+    cover: "img/goose/radiogoose.webp",
+    stream_url: "https://stream.radiogoose.ru/listen/radiogoose/play",
+    server: "",
+    program: {
+    time: "",
+    name: "",
+    description: "",
+    },
+    social: {                           
+    },
+    apps: {
+    },
+    },                   
+ {
+    name: "",
+    hash: "",
+    description: "",
+    logo: "",
+    album: "img/goose/bigroom.webp",
+    cover: "img/goose/bigroom.webp",
+    stream_url: "https://stream.radiogoose.ru/listen/bigroom/play",
+    server: "",
+    program: {
+    time: "",
+    name: "",
+    description: "",
+    },
+    social: {                           
+    },
+    apps: {
+    },
+    },
+{
+    name: "",
+    hash: "",
+    description: "",
+    logo: "",
+    album: "img/goose/dancecore.webp",
+    cover: "img/goose/dancecore.webp",
+    stream_url: "https://stream.radiogoose.ru/listen/dancecore/play",
+    server: "",
+    program: {
+    time: "",
+    name: "",
+    description: "",
+    },
+    social: {                           
+    },
+    apps: {
+    },
+    },
+{
+    name: "",
+    hash: "",
+    description: "",
+    logo: "",
+    album: "img/goose/deep.webp",
+    cover: "img/goose/deep.webp",
+    stream_url: "https://stream.radiogoose.ru/listen/deep/play",
+    server: "",
+    program: {
+    time: "",
+    name: "",
+    description: "",
+    },
+    social: {                           
+    },
+    apps: {
+    },
+    },
+{
+    name: "",
+    hash: "",
+    description: "",
+    logo: "",
+    album: "img/goose/drum.webp",
+    cover: "img/goose/drum.webp",
+    stream_url: "https://stream.radiogoose.ru/listen/dnb/play",
+    server: "",
+    program: {
+    time: "",
+    name: "",
+    description: "",
+    },
+    social: {                           
+    },
+    apps: {
+    },
+    },
+{
+    name: "",
+    hash: "",
+    description: "",
+    logo: "",
+    album: "img/goose/electro.webp",
+    cover: "img/goose/electro.webp",
+    stream_url: "https://stream.radiogoose.ru/listen/electro/play",
+    server: "",
+    program: {
+    time: "",
+    name: "",
+    description: "",
+    },
+    social: {                           
+    },
+    apps: {
+    },
+    },
+{
+    name: "",
+    hash: "",
+    description: "",
+    logo: "",
+    album: "img/goose/harddance.webp",
+    cover: "img/goose/harddance.webp",
+    stream_url: "https://stream.radiogoose.ru/listen/harddance/play",
+    server: "",
+    program: {
+    time: "",
+    name: "",
+    description: "",
+    },
+    social: {                           
+    },
+    apps: {
+    },
+    },
+
+{
+    name: "",
+    hash: "",
+    description: "",
+    logo: "",
+    album: "img/goose/hardstyle.webp",
+    cover: "img/goose/hardstyle.webp",
+    stream_url: "https://stream.radiogoose.ru/listen/hardstyle/play",
+    server: "",
+    program: {
+    time: "",
+    name: "",
+    description: "",
+    },
+    social: {                           
+    },
+    apps: {
+    },
+    },
+{
+    name: "",
+    hash: "",
+    description: "",
+    logo: "",
+    album: "img/goose/midtempo.webp",
+    cover: "img/goose/midtempo.webp",
+    stream_url: "https://stream.radiogoose.ru/listen/midtempo/play",
+    server: "",
+    program: {
+    time: "",
+    name: "",
+    description: "",
+    },
+    social: {                           
+    },
+    apps: {
+    },
+    },
+{
+    name: "",
+    hash: "",
+    description: "",
+    logo: "",
+    album: "img/goose/oldschool.webp",
+    cover: "img/goose/oldschool.webp",
+    stream_url: "https://stream.radiogoose.ru/listen/oldschool/play",
+    server: "",
+    program: {
+    time: "",
+    name: "",
+    description: "",
+    },
+    social: {                           
+    },
+    apps: {
+    },
+    },
+{
+    name: "",
+    hash: "",
+    description: "",
+    logo: "",
+    album: "img/goose/phonk.webp",
+    cover: "img/goose/phonk.webp",
+    stream_url: "https://stream.radiogoose.ru/listen/phonk/play",
+    server: "",
+    program: {
+    time: "",
+    name: "",
+    description: "",
+    },
+    social: {                           
+    },
+    apps: {
+    },
+    },
+{
+    name: "",
+    hash: "",
+    description: "",
+    logo: "",
+    album: "img/goose/rock.webp",
+    cover: "img/goose/rock.webp",
+    stream_url: "https://stream.radiogoose.ru/listen/rock/play",
+    server: "",
+    program: {
+    time: "",
+    name: "",
+    description: "",
+    },
+    social: {                           
+    },
+    apps: {
+    },
+    },
+{
+    name: "",
+    hash: "",
+    description: "",
+    logo: "",
+    album: "img/goose/rus.webp",
+    cover: "img/goose/rus.webp",
+    stream_url: "https://stream.radiogoose.ru/listen/rus/play",
+    server: "",
+    program: {
+    time: "",
+    name: "",
+    description: "",
+    },
+    social: {                           
+    },
+    apps: {
+    },
+    },
+{
+    name: "",
+    hash: "",
+    description: "",
+    logo: "",
+    album: "img/goose/trance.webp",
+    cover: "img/goose/trance.webp",
+    stream_url: "https://stream.radiogoose.ru/listen/trance/play",
+    server: "",
+    program: {
+    time: "",
+    name: "",
+    description: "",
+    },
+    social: {                           
+    },
+    apps: {
+    },
+    },
+{
+    name: "",
+    hash: "",
+    description: "",
+    logo: "",
+    album: "img/goose/moscow_madness_logo_name_512x512.webp",
+    cover: "img/goose/moscow_madness_logo_name_512x512.webp",
+    stream_url: "https://stream.radiogoose.ru/listen/hardcore/play",
+    server: "",
+    program: {
+    time: "",
+    name: "",
+    description: "",
+    },
+    social: {                           
+    },
+    apps: {
+    },
+    },
+              
+
+                   
+                   
+],
+};
+            
+</script>
+<script src="ajax/libs/howler/2.2.3/howler.min.js"></script>
+</head>
+<body class="preload" onload="window.Telegram?.WebApp?.ready()"> 
+<header class="header"><img class="header-logo-img"  /><div class="items-start"><button class="btn" data-outside="offcanvas-stations"><svg class="i i-list" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"></circle><path d="M5 4.9a10 10 0 0 0 0 14.2M7.8 7.7a6 6 0 0 0 0 8.6m8.4 0a6 6 0 0 0 0-8.6M19 19.1a10 10 0 0 0 0-14.2"></path></svg></button></div></header>
+    
+<div class="app">
+<span src="" alt="cover" class="player-cover-image" height="100%" width="100%"></span>
+<div class="player song-now scrollbar flex column">
+<div class="player-wrapper">
+<div class="player-cover flex column items-center justify-center g-2 items-center">
+<div class="player-artwork relative"><img alt="artwork" height="600" src="assets/cover.png" width="600" /><div class="player-program"></div></div> 
+<div class="player-controller"><button class="player-button player-button-backward-step"><svg class="i i-backward-step" viewBox="0 0 24 24"><path d="M6 5v14M18 4v16L8 12Z"></path></svg></button><button aria-label="Play/Pause" class="player-button player-button-play flex-none"><svg class="i i-play" viewBox="0 0 24 24"><path d="m7 3 14 9-14 9z"></path></svg></button><button class="player-button player-button-forward-step"><svg class="i i-forward-step" viewBox="0 0 24 24"><path d="M18 5v14M6 4v16l10-8Z"></path></svg></button>
+<div class="player-cover-title flex column items-center justify-center uppercase text-center" id="track-info-container"><span class="song-artist fw-700 station-description m:fs-4"></span><span class="song-name station-name fw-700 m:fs-2 fs-5 color-title" id="track-info"></span></div></div>
+</div>
+</div>
+</div>
+                                    
+ 
+                                    
+<div class="visualizer"></div>
+<aside class="offcanvas scrollbar" id="offcanvas-stations"><div class="offcanvas-content"><div class="stations column flex g-1" id="stations"></div></div></aside>
+                                        
+<footer>
+<div class="footer-tv"></div>
+<div class="footer-app"></div>
+<div class="player-social"></div>
+</footer>
+</div>
+ 
+</body>
+</html>
